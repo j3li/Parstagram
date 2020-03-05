@@ -127,33 +127,60 @@
                                             <outlet property="usernameLabel" destination="zCF-RF-zCn" id="J11-TW-BPr"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="IJq-Sy-o5c">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" id="IJq-Sy-o5c" customClass="CommentCell" customModule="Parstagram" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="457" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IJq-Sy-o5c" id="yqQ-Wd-GeP">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbD-Tw-kQL">
-                                                    <rect key="frame" x="16" y="8" width="48" height="28"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbD-Tw-kQL">
+                                                    <rect key="frame" x="16" y="8" width="69" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmo-LJ-TiS">
-                                                    <rect key="frame" x="69" y="8" width="298" height="28"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Comment " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmo-LJ-TiS" userLabel="Comment">
+                                                    <rect key="frame" x="102" y="8" width="246" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="kbD-Tw-kQL" secondAttribute="bottom" constant="8" id="Cxn-xc-wzz"/>
+                                                <constraint firstItem="hmo-LJ-TiS" firstAttribute="leading" secondItem="kbD-Tw-kQL" secondAttribute="trailing" constant="8" id="G5p-tF-g7l"/>
+                                                <constraint firstItem="hmo-LJ-TiS" firstAttribute="top" secondItem="yqQ-Wd-GeP" secondAttribute="top" constant="8" id="IYf-kN-LeE"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hmo-LJ-TiS" secondAttribute="bottom" constant="8" id="Twc-Gq-nRU"/>
+                                                <constraint firstItem="kbD-Tw-kQL" firstAttribute="top" secondItem="yqQ-Wd-GeP" secondAttribute="top" constant="8" id="YYe-Kt-CdJ"/>
+                                                <constraint firstItem="kbD-Tw-kQL" firstAttribute="leading" secondItem="yqQ-Wd-GeP" secondAttribute="leading" constant="16" id="bh5-vf-MWP"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hmo-LJ-TiS" secondAttribute="trailing" constant="8" id="gC2-Yn-2jr"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commentLabel" destination="hmo-LJ-TiS" id="ROm-8i-IVi"/>
+                                            <outlet property="nameLabel" destination="kbD-Tw-kQL" id="D2x-0G-hlH"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddCommentCell" id="AM1-nK-YwD">
+                                        <rect key="frame" x="0.0" y="501" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AM1-nK-YwD" id="YhK-r8-LkB">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Add a comment..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56a-HG-adG">
+                                                    <rect key="frame" x="16" y="8" width="332" height="28"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="kbD-Tw-kQL" secondAttribute="bottom" constant="8" id="Cxn-xc-wzz"/>
-                                                <constraint firstItem="hmo-LJ-TiS" firstAttribute="leading" secondItem="kbD-Tw-kQL" secondAttribute="trailing" constant="8" id="G5p-tF-g7l"/>
-                                                <constraint firstItem="hmo-LJ-TiS" firstAttribute="top" secondItem="yqQ-Wd-GeP" secondAttribute="top" constant="8" id="IYf-kN-LeE"/>
-                                                <constraint firstAttribute="bottom" secondItem="hmo-LJ-TiS" secondAttribute="bottom" constant="8" id="Twc-Gq-nRU"/>
-                                                <constraint firstItem="kbD-Tw-kQL" firstAttribute="top" secondItem="yqQ-Wd-GeP" secondAttribute="top" constant="8" id="YYe-Kt-CdJ"/>
-                                                <constraint firstItem="kbD-Tw-kQL" firstAttribute="leading" secondItem="yqQ-Wd-GeP" secondAttribute="leading" constant="16" id="bh5-vf-MWP"/>
+                                                <constraint firstItem="56a-HG-adG" firstAttribute="top" secondItem="YhK-r8-LkB" secondAttribute="top" constant="8" id="BNT-RC-ZNP"/>
+                                                <constraint firstAttribute="trailing" secondItem="56a-HG-adG" secondAttribute="trailing" constant="8" id="IxW-Mr-ZaN"/>
+                                                <constraint firstItem="56a-HG-adG" firstAttribute="leading" secondItem="YhK-r8-LkB" secondAttribute="leading" constant="16" id="X1C-GY-Tax"/>
+                                                <constraint firstAttribute="bottom" secondItem="56a-HG-adG" secondAttribute="bottom" constant="8" id="uYz-Up-iNZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -239,6 +266,7 @@
                 <navigationController storyboardIdentifier="FeedNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="UFS-bc-BFC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LHc-nf-aW9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
